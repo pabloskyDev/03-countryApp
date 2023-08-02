@@ -1,0 +1,14 @@
+.spinner-container {
+  display: flex;
+  gap: 4px;
+  position: fixed;
+  background-color: #000000;
+  color: #FFFFFF;
+  border-radius: 20px;
+  padding: 8px;
+  bottom: 5%;
+  right: 5%;
+  span {
+    line-height: 23px;
+  }
+}
