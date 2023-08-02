@@ -9,6 +9,7 @@
 <hr>
 <div class="row">
   <div class="col">
+    <country-loading-spinner *ngIf="isLoading"></country-loading-spinner>
     <country-country-table [countries]="countries"></country-country-table>
   </div>
 </div>
