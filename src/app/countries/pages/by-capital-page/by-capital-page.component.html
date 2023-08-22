@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col">
-    <country-search-box placeholder="Buscar por capital" (onValue)="searchByCapital($event)"></country-search-box>
+    <country-search-box placeholder="Buscar por capital" (onDebounce)="searchByCapital($event)"></country-search-box>
   </div>
 </div>
 <hr>
