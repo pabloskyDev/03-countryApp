@@ -9,6 +9,7 @@ import { Subject, debounceTime, Subscription } from 'rxjs';
 })
 export class SearchBoxComponent implements OnInit, OnDestroy {
   @Input() placeholder: string = '';
+  @Input() initValue: string = '';
   @Output() onValue: EventEmitter<any> = new EventEmitter();
   @Output() onDebounce: EventEmitter<any> = new EventEmitter();
 
@@ -21,7 +22,6 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
       debounceTime(300)
     )
     .subscribe(value => {
-      console.log('This value deBouncer is: ', value);
       this.search(value);
     })
   }
