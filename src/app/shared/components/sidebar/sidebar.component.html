@@ -1,11 +1,43 @@
-<h2>Países</h2>
-<hr>
-
-<ul class="list-group">
-  <!-- <li routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}" class="list-group-item">Home page</li>
-  <li routerLink="about" routerLinkActive="active" class="list-group-item">About page</li>
-  <li routerLink="contact" routerLinkActive="active" class="list-group-item">Contact page</li> -->
-  <li routerLink="countries/by-capital" routerLinkActive="active" class="list-group-item">Por capital</li>
-  <li routerLink="countries/by-country" routerLinkActive="active" class="list-group-item">Por país</li>
-  <li routerLink="countries/by-region" routerLinkActive="active" class="list-group-item">Por región</li>
-</ul>
+<aside
+  class="fixed top-0 left-0 z-50 h-full transition-transform duration-500 w-[238px] bg-primary-text md:translate-x-0 md:border-r md:border-r-accent"
+  [ngClass]="{
+    'translate-x-0': uiService.isOpenSidebar | async,
+    '-translate-x-full': (uiService.isOpenSidebar | async) === false
+  }">
+  <div class="h-screen text-accent text-base grid grid-rows-[66px_1fr_66px]">
+    <header class="grid place-items-center">
+      <country-svg path="github" class="block"></country-svg>
+    </header>
+    <ul class="py-3 overflow-y-auto">
+      <!-- <li (click)="uiService.toggleSidebar()" class="nav-li">
+        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}" class="block p-3">Home</a>
+      </li> -->
+      <li (click)="uiService.toggleSidebar()" class="nav-li">
+        <a routerLink="about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}" class="block p-3">About</a>
+      </li>
+      <!-- <li (click)="uiService.toggleSidebar()" class="nav-li">
+        <a routerLink="contact" routerLinkActive="active" class="block p-3">Contact</a>
+      </li> -->
+      <li (click)="uiService.toggleSidebar()" class="nav-li">
+        <a routerLink="countries/by-capital" routerLinkActive="active" class="block p-3">Capital</a>
+      </li>
+      <li (click)="uiService.toggleSidebar()" class="nav-li">
+        <a routerLink="countries/by-country" routerLinkActive="active" class="block p-3">Country</a>
+      </li>
+      <li (click)="uiService.toggleSidebar()" class="nav-li">
+        <a routerLink="countries/by-region" routerLinkActive="active" class="block p-3">Region</a>
+      </li>
+    </ul>
+    <footer class="self-center p-3">
+      &copy; Developed by PabloskyDev
+    </footer>
+  </div>
+</aside>
+<div
+  aria-hidden="true"
+  class="fixed z-30 h-full transition-all duration-300 bg-light-gray bg-opacity-60 md:hidden"
+  [ngClass]="{
+    'w-0': (uiService.isOpenSidebar | async) === false,
+    'w-full': uiService.isOpenSidebar | async
+  }"
+  (click)="uiService.toggleSidebar()"></div>

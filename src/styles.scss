@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  // colors
+  --dark-primary: #1976D2;
+  --light-primary: #BBDEFB;
+  --primary: #2196F3;
+  --white: #FFFFFF;
+  --black: #000000;
+  --accent: #cbcedc;
+  --primary-text: #194052;
+  --secondary-text: #757575;
+  --divider: #BDBDBD;
+
+  // font-sizes
+  --xs: 12px;
+  --sm: 14px;
+  --base: 16px;
+  --lg: 18px;
+  --xl: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  background: var(--accent);
+ background-blend-mode: multiply;
+  color: var(--primary-text);
+}
+
+body {
+  font-size: var(--base);
+}
+
+a {
+  cursor: pointer;
+}
+
+.nav-li {
+  @apply hover:bg-accent hover:bg-opacity-30 hover:font-bold hover:rounded-lg;
+}

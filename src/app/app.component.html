@@ -1,8 +1,9 @@
-<div class="row mt-4">
-  <div class="col-3">
-    <country-sidebar></country-sidebar>
-  </div>
-  <div class="col">
-    <router-outlet></router-outlet>
-  </div>
-</div>
+<section class="md:grid md:grid-cols-[238px,1fr] h-screen w-screen">
+  <country-sidebar></country-sidebar>
+  <article class="grid h-screen grid-rows-[68px,1fr]">
+    <country-top-bar class="top-0 z-40"></country-top-bar>
+    <main class="h-full overflow-y-auto p-3">
+      <router-outlet></router-outlet>
+    </main>
+  </article>
+</section>
